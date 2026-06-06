@@ -1,0 +1,146 @@
+/* ==============================
+   📚 SCHRITT 4: Das Styling
+   ============================== */
+
+/* -- Grundlayout -- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* -- Die weiße Karte in der Mitte -- */
+.quiz-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+}
+
+/* -- Versteckte Screens -- */
+.hidden {
+  display: none;
+}
+
+/* -- Startscreen -- */
+#start-screen h1 {
+  font-size: 2.5rem;
+  color: #4a4a8a;
+  margin-bottom: 0.8rem;
+}
+
+#start-screen p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* -- Fortschrittsleiste oben -- */
+.progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 600;
+}
+
+/* -- Fragetext -- */
+#question-text {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+  min-height: 60px;
+}
+
+/* -- Antwort-Buttons -- */
+#answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.answer-btn {
+  padding: 0.9rem 1.2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.answer-btn:hover:not(:disabled) {
+  border-color: #667eea;
+  background: #f0f0ff;
+  transform: translateX(4px);
+}
+
+/* Richtige Antwort → grün */
+.answer-btn.richtig {
+  border-color: #22c55e;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: bold;
+}
+
+/* Falsche Antwort → rot */
+.answer-btn.falsch {
+  border-color: #ef4444;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* -- Start & Restart Button -- */
+#start-btn,
+#restart-btn {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+}
+
+#start-btn:hover,
+#restart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.7);
+}
+
+/* -- Ergebnis-Screen -- */
+#result-screen h1 {
+  font-size: 2rem;
+  color: #4a4a8a;
+  margin-bottom: 1rem;
+}
+
+#result-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+#result-emoji {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
