@@ -22,7 +22,7 @@
     <!-- Startbildschirm -->
     <div id="start-screen">
       <h1>🧠 Quiz App</h1>
-      <p>Teste dein Allgemeinwissen in 5 Fragen!</p>
+      <p>Teste dein Allgemeinwissen in 10 zufälligen Fragen!</p>
       <button id="start-btn">Quiz starten</button>
     </div>
 
@@ -43,11 +43,23 @@
       <h1>🎉 Quiz beendet!</h1>
       <p id="result-text">Du hast X von 5 Fragen richtig.</p>
       <div id="result-emoji">🏆</div>
+
+      <!-- E-Mail Formular -->
+      <div id="email-form">
+        <p class="email-label">Ergebnis per E-Mail abschicken:</p>
+        <input type="text" id="user-name" placeholder="Dein Name" />
+        <input type="email" id="user-email" placeholder="Deine E-Mail-Adresse" />
+        <button id="submit-btn">📧 Ergebnis abschicken</button>
+        <p id="submit-status"></p>
+      </div>
+
       <button id="restart-btn">Nochmal spielen</button>
     </div>
 
   </div>
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 
   <!-- PWA: Service Worker registrieren -->
