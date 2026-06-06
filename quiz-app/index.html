@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PWA: App-Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- PWA: Theme-Farbe für die Browserleiste auf dem Handy -->
+  <meta name="theme-color" content="#667eea" />
+
+  <!-- PWA: App-Icon für iOS -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+
+  <div class="quiz-container">
+
+    <!-- Startbildschirm -->
+    <div id="start-screen">
+      <h1>🧠 Quiz App</h1>
+      <p>Teste dein Allgemeinwissen in 5 Fragen!</p>
+      <button id="start-btn">Quiz starten</button>
+    </div>
+
+    <!-- Frage-Bereich -->
+    <div id="question-screen" class="hidden">
+      <div class="progress">
+        <span id="question-number">Frage 1 von 5</span>
+        <span id="score-display">Punkte: 0</span>
+      </div>
+      <h2 id="question-text">Hier steht die Frage...</h2>
+      <div id="answers-container">
+        <!-- Antwort-Buttons werden per JavaScript eingefügt -->
+      </div>
+    </div>
+
+    <!-- Ergebnis-Bildschirm -->
+    <div id="result-screen" class="hidden">
+      <h1>🎉 Quiz beendet!</h1>
+      <p id="result-text">Du hast X von 5 Fragen richtig.</p>
+      <div id="result-emoji">🏆</div>
+      <button id="restart-btn">Nochmal spielen</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- PWA: Service Worker registrieren -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/quiz-app/service-worker.js")
+        .then(function() {
+          console.log("Service Worker registriert ✅");
+        })
+        .catch(function(err) {
+          console.log("Service Worker Fehler:", err);
+        });
+    }
+  </script>
+</body>
+</html>
