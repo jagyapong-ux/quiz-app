@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz App</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- PWA: App-Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- PWA: Theme-Farbe für die Browserleiste auf dem Handy -->
+  <meta name="theme-color" content="#667eea" />
+
+  <!-- PWA: App-Icon für iOS -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
 </head>
 <body>
 
@@ -40,5 +49,18 @@
   </div>
 
   <script src="script.js"></script>
+
+  <!-- PWA: Service Worker registrieren -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/quiz-app/service-worker.js")
+        .then(function() {
+          console.log("Service Worker registriert ✅");
+        })
+        .catch(function(err) {
+          console.log("Service Worker Fehler:", err);
+        });
+    }
+  </script>
 </body>
 </html>
